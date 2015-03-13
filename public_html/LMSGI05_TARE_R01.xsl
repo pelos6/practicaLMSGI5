@@ -4,8 +4,11 @@
     <xsl:template match="/">
         <html>
             <body>
-                <h2>Datos                 Notas</h2>
-                <table border="1">
+                <table>
+                     <tr>
+                        <th colspan="2">Datos</th>
+                        <th colspan="4">Notas</th>      
+                    </tr>
                     <tr>
                         <th>Nombre</th>
                         <th>Apellidos</th>       
@@ -15,8 +18,7 @@
                         <th>Final</th>
                         <th>Nota en Letra</th>
                     </tr>
-                    <xsl:for-each select="notas/alumno">
-                        <!--<xsl:if test="@convocatoria=Junio">-->
+                    <xsl:for-each select="notas/alumno[@convocatoria='Junio']">
                         <tr>
                             <td>
                                 <xsl:value-of select="@convocatoria"/>
